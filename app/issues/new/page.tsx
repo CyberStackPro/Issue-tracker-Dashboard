@@ -1,6 +1,10 @@
-import { Button, TextArea, TextField } from "@radix-ui/themes";
-import { Search } from "lucide-react";
+"use client";
+
 import React from "react";
+import { Button, TextField } from "@radix-ui/themes";
+import SimpleMDE from "react-simplemde-editor";
+import "easymde/dist/easymde.min.css";
+import { Search } from "lucide-react";
 
 const NewIssuePage = () => {
   return (
@@ -10,7 +14,7 @@ const NewIssuePage = () => {
           <Search height="16" width="16" />
         </TextField.Slot>
       </TextField.Root>
-      <TextArea placeholder="Reply to comment…" />
+      <SimpleMDE />
       <Button>Submit New Issue</Button>
     </div>
   );
