@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@radix-ui/themes";
 import { PencilLineIcon } from "lucide-react";
 import Link from "next/link";
@@ -7,7 +8,7 @@ const EditIssueButton = ({ issueId }: { issueId: number }) => {
   return (
     <Button>
       <PencilLineIcon size={20} />
-      <Link href={`/issue/${issueId}/edit`}>Edit Issue</Link>
+      <Link href={`/issues/${issueId}/edit`}>Edit Issue</Link>
     </Button>
   );
 };
