@@ -35,7 +35,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
+      <body
+        className={`${geistMono.variable} ${geistSans.variable} antialiased`}
+      >
         <Theme appearance="dark" accentColor="violet">
           <NavBar />
           <main className="p-5">{children}</main>

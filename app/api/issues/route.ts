@@ -1,17 +1,7 @@
 import prisma from "@/prisma/client";
 import { NextRequest, NextResponse } from "next/server";
-import { z } from "zod";
+import { createIssueSchema } from "@/app/validationSchema";
 
-const createIssueSchema = z.object({
-  title: z
-    .string()
-    .min(5, { message: "Title must be at least 5 characters" })
-    .max(255),
-  description: z
-    .string()
-    .min(5, { message: "Description must be at least 5 characters" })
-    .max(255),
-});
 export async function POST(request: NextRequest) {
   const body = await request.json();
   const validation = createIssueSchema.safeParse(body);
