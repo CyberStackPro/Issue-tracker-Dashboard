@@ -15,7 +15,6 @@ import {
   Flex,
   Text,
 } from "@radix-ui/themes";
-import { stat } from "fs";
 
 const NavBar = () => {
   return (
