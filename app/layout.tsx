@@ -6,6 +6,7 @@ import { Container, Theme } from "@radix-ui/themes";
 // import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "./NavBar";
+import AuthProvider from "./auth/Provider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,13 +34,15 @@ export default function RootLayout({
       <body
         className={`${geistMono.variable} ${geistSans.variable} antialiased`}
       >
-        <Theme appearance="dark" accentColor="violet">
-          <NavBar />
-          <main className="p-5">
-            <Container>{children}</Container>
-          </main>
-          {/* <ThemePanel /> */}
-        </Theme>
+        <AuthProvider>
+          <Theme appearance="dark" accentColor="violet">
+            <NavBar />
+            <main className="p-5">
+              <Container>{children}</Container>
+            </main>
+            {/* <ThemePanel /> */}
+          </Theme>
+        </AuthProvider>
       </body>
     </html>
   );
