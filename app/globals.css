@@ -24,6 +24,9 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .nav-link {
+    @apply text-zinc-600 dark:text-zinc-400 transition-colors;
+  }
 }
 /* .radix-themes {
   --default-font-family: var(--font-inter);
