@@ -1,9 +1,20 @@
 import { IssueStatusBadge } from "@/app/components";
+import prisma from "@/prisma/client";
 import { Issue } from "@prisma/client";
 import { Flex, Card, Text } from "@radix-ui/themes";
 import { Heading } from "lucide-react";
 import ReactMarkDown from "react-markdown";
 
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  const issue = await prisma.issue.findUnique({
+    where: { id: parseInt(params.id) },
+  });
+
+  return {
+    title: issue?.title,
+    description: "Details of issue" + issue?.id,
+  };
+}
 const IssueDetails = ({ issue }: { issue: Issue }) => {
   return (
     <>
