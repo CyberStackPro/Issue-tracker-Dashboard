@@ -4,7 +4,7 @@ import { Select } from "@radix-ui/themes";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Skeleton } from "@/app/components";
-import toast, { Toast } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 const AssingeeSelect = ({ issue }: { issue: Issue }) => {
   const { data: users, error, isLoading } = useUsers();

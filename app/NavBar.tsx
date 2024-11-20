@@ -46,7 +46,10 @@ const AuthStatus = () => {
       <DropdownMenu.Root>
         <DropdownMenu.Trigger>
           <Avatar
-            src={session!.user!.image!}
+            src={
+              session?.user?.image ||
+              "https://i.pravatar.cc/150?u=a042581f4e29026024d"
+            }
             fallback="?"
             size={"2"}
             radius="full"
@@ -56,7 +59,7 @@ const AuthStatus = () => {
         </DropdownMenu.Trigger>
         <DropdownMenu.Content>
           <DropdownMenu.Label>
-            <Text size={"2"}>{session!.user?.email!}</Text>
+            <Text size={"2"}>{session?.user?.email || "User"}</Text>
           </DropdownMenu.Label>
           <DropdownMenu.Item>
             <Link href={"/api/auth/signout"}>Log Out</Link>

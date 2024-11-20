@@ -14,14 +14,9 @@ interface Props {
   itemCount: number;
   pageSize: number;
   currentPage: number;
-  onPageChange?: (page: number) => void;
+  // onPageChange?: (page: number) => void;
 }
-const Pagination = ({
-  itemCount,
-  pageSize,
-  currentPage,
-  onPageChange,
-}: Props) => {
+const Pagination = ({ itemCount, pageSize, currentPage }: Props) => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
